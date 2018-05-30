@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/styles/style1.css">
+    <link rel="stylesheet" href="/styles/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div>
+        <ul class="navigation">
+          <li><a href="/auth/logout">Logout</a></li>
+            <li><a href="#/app/">Dashboard</a></li>
+            <li><p class="name">{{name}}</p></li>
+           <li><img class="image" src="{{image}}"></li>
+        </ul>
+    </div>
+    <div class="grid">
+      <div class="additem">
+      <div>
+       <div class="page-header">
+         <h1>List of Items</h1>
+      </div>
+      <ul class="list-inline addlist">
+        <li>ProductName</li>
+          <li>Price</li>
+            <li>Description<li>
+      </ul>
+      <ul ng-repeat="item in items" class="list-inline addlist">
+        <li>{{item.pname}}</li>
+        <li>{{item.price}}</li>
+        <li>{{item.description}}</li>
+      </ul>
+      </div>
+    </div>
+
+      <div class="background">
+      <img src={{img}}></img>
+        <a ng-href="" ng-click="OpenWindow()"><button class="btn btn-primary viewbutton">View TV</button></a>
+        <button class="btn btn-default viewbutton" ng-click="changeImage()">Change Image..</button><
+        <input class="changeimg" type="text" ng-show="showing" ng-model="changeimg" placeholder="Copy Image URL...">
+        <button style="display:block"class="btn btn-default" ng-show="showing" ng-click="imageChanged()">change</button>
+      </div>
+      <div class="add">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color:#624571;color:white">Add item</div>
+          <div class="panel-body">
+          <form class="addform" ng-submit="addItem()" >
+            <p>Product name:<input type='text' ng-model="pname" name="pname"></p>
+              <p style="position:relative;left:55px;">Price:<input type='text' ng-model="price" name="price" ></p>
+              <p style="position:relative;left:18px;">Description:<input type="text" ng-model="description" style="width:50%" name="description"></p>
+              <div class="panel-footer"><input type="submit" value="Add Item"></div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

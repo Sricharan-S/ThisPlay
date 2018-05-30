@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/styles/style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div>
+        <ul class="navigation">
+          <li><a href="/auth/logout">Logout</a></li>
+            <li><a href="#/app/">Dashboard</a></li>
+            <li><p class="name">{{name}}</p></li>
+           <li><img class="image" src="{{image}}"></li>
+        </ul>
+    </div>
+    <h2 style="padding:10px;color:purple;">Select a template</h2>
+    <div class="grid">
+    <div class="item" ng-repeat = "item in items">
+      <div class="pic"><img ng-src={{item.templateImage}}></div>
+      <div class="buttons" >
+        <a href="#/app/manage"><button class="Viewbtn" ng-click="tellId($index)">View</button></a>
+        <a href="#/app/manage"><button class="Viewbtn" ng-click="tellId($index)">Edit</button></a>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+.grid{
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows:70% 1fr;
+  height:768px;
+}
+.background img{
+  width:95%;
+  height:40%;
+  display:inline-block;
+  border:1em solid #b2b2b2;
+}
+.background{
+  margin-top:100px;
+}
+.viewbutton{
+  display:inline-block;
+  position: relative;
+  padding:20px 0;
+  margin:20px 0;
+  left:20%;
+}
+.addlist li{
+  margin-left:100px;
+}
+.addform input{
+  display:inline-block;
+  margin-left:15px;
+  border-radius:5px;
+}
+.background input{
+  display:inline:block;
+  width:100%;
+  padding:5px;
+  border-radius: 2px;
+  margin-top:5px;
+}

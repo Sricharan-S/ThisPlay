@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    html,body{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+}
+     img{
+         min-height:100%;
+         min-width:100%;
+         height:auto;
+         width:auto;
+         position:absolute;
+         top:-100%; bottom:-100%;
+         left:-100%; right:-100%;
+         margin:auto;
+ }
+ .listitems{
+   position: absolute;
+   left:30%;
+   top:35%;
+   transform: translate(-50%,-50%);
+   padding: 0;
+   list-style-type: none;
+   margin: 30px 0;
+ }
+
+.listitems div{
+  display:inline-block;
+  width:200px;
+  padding:10px;
+}
+.pname{
+  width:30%;
+}
+    </style>
+
+  </head>
+  <body>
+    <img src={{img}}>
+    <div class="result">
+
+      <!-- <ul class="listitems">
+        <li>
+          <h3 style="color:white">Product - Price</h3>
+           <span class="belt">Description</span>
+        </li>
+        <li ng-repeat="item in items">
+          <h3>{{item.pname}} - {{item.price}}</h3>
+           <span class="belt">{{item.description}}</span>
+        </li>
+      </ul> -->
+
+      <ul class="listitems">
+        <li>
+        <div class="pname" style="font-size:22px">Product</div>
+        <div class="price" style="font-size:22px">Price</div>
+        <div class="description" style="font-size:22px">Description</div>
+        </li>
+        <li ng-repeat="item in arr">
+          <div class="pname" style="font-size:16px">{{item.pname}}</div>
+          <div class="price" style="font-size:16px">{{item.price}}</div>
+          <div class="description" style="font-size:16px">{{item.description}}</div>
+        </li>
+      </ul>
+
+    </div>
+  </body>
+</html>
