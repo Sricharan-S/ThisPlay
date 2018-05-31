@@ -44,7 +44,9 @@
         <button class="btn btn-default viewbutton" ng-click="changeImage()">Change Image..</button><
         <input class="changeimg" type="text" ng-show="showing" ng-model="changeimg" placeholder="Copy Image URL...">
         <button style="display:block"class="btn btn-default" ng-show="showing" ng-click="imageChanged()">change</button>
+        <input type="file" name="img_file" ngf-select  ng-model="img_file"  ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB">
       </div>
+
       <div class="add">
         <div class="panel panel-default">
           <div class="panel-heading" style="background-color:#624571;color:white">Add item</div>

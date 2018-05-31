@@ -1,10 +1,33 @@
 var route = require('express').Router();
+var express = require('express')
+var app = express()
 var User = require('../models/users').user;
 var Item = require('../models/users').item;
 var Template = require('../models/users').template;
+var Image = require('../models/users').image;
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
+var multer = require('multer');
+var fs = require('fs');
+var assert = require('assert');
 var sresult,zresult;
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+//multer code
+var storage = multer.diskStorage({
+    destination : (req,file,cb) => {
+        cb(null, 'uploads/images')
+    },
+    filename : (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+})
+var upload = multer({storage : storage})
+
 
 route.get('/',function(req,res){
  res.send(req.user);
@@ -48,6 +71,7 @@ res.send(zresult);
 route.post('/template',urlencodedParser,function(req,res){
   Template.findOne({templateId:req.body.id},function(err,result){
   zresult = result;
+  console.log(result);
   res.send(zresult);
   })
 })

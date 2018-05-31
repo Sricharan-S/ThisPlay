@@ -22,7 +22,15 @@ const templateSchema = new mongoose.Schema({
   templateImage:String
 })
 
+const imageSchema = new mongoose.Schema({
+  uploadImage:{
+    data:Buffer,
+    contentType:String
+  }
+})
+
 const usermodel = mongoose.model('user',userSchema,'users');
 const itemmodel = mongoose.model('item',itemSchema);
 const templatemodel = mongoose.model('template',templateSchema);
-module.exports = {user:usermodel,item:itemmodel,template:templatemodel};
+const imagemodel = mongoose.model('image',imageSchema);
+module.exports = {user:usermodel,item:itemmodel,template:templatemodel,image:imagemodel};
